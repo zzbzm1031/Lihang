@@ -75,7 +75,7 @@ $$
 
 #### 原始形式
 
-> 输入：$T=\{(x_1,y_1),(x_2,y_2),\dots,(x_N,y_N)\}\\ x_i\in \cal X=\bf R^n\mit , y_i\in \cal Y\it =\{-1,+1\}, i=1,2,\dots,N; \ \ 0<\eta\leqslant 1$
+> 输入：$T=\{(x_1,y_1),(x_2,y_2),\dots,(x_N,y_N)\}\\ x_i\in \mathcal X=\bf R^n\mit , y_i\in \mathcal Y\it =\{-1,+1\}, i=1,2,\dots,N; \ \ 0<\eta\leqslant 1$
 >
 > 输出：$w,b;f(x)=sign(w\cdot x+b)$
 >
