@@ -74,10 +74,12 @@
 
 注意书中的这部分描述，整理了一下到表格里：
 
-|              | 假设空间$\mathcal F$                                             | 输入空间$\mathcal X$ | 输出空间$\mathcal Y$ | 参数空间      |
-| ------------ | ------------------------------------------------------------ | ---------------- | ---------------- | ------------- |
-| 决策函数     | $\mathcal F\it =\{f_{\theta} |Y=f_{\theta}(x), \theta \in \bf R \it ^n\}$ | 变量             | 变量             | $\bf R\it ^n$ |
-| 条件概率分布 | $\mathcal F\it =\{P|P_{\theta}(Y|X),\theta\in \bf R \it ^n\}$    | 随机变量         | 随机变量         | $\bf R\it ^n$ |
+---------------------
+
+|              | 假设空间$\mathcal F$  | 输入空间$\mathcal X$ | 输出空间$\mathcal Y$ | 参数空间      |
+| ------------ | ---------------------| ---------------- | -------------- | ------------- |
+| 决策函数     | $\mathcal{F}=\{f\|Y=f_{\theta}(X),\theta \in \mathbf{R}^n\}$ | 变量             | 变量             | $\bf R\it ^n$ |
+| 条件概率分布 | $\mathcal F\it =\{P\|P_{\theta}(Y\|X),\theta\in \bf R \it ^n\}$    | 随机变量         | 随机变量         | $\bf R\it ^n$ |
 
 书中描述的时候，有提到**条件概率分布族**，这个留一下，后面[CH06](../CH06/README.md)有提到确认逻辑斯谛分布属于指数分布族。
 
@@ -90,19 +92,19 @@
 1. 损失函数(loss function)或代价函数(cost function)
    损失函数定义为给定输入$X$的**预测值$f(X)$**和**真实值$Y$**之间的**非负实值**函数，记作$L(Y,f(X))$
 
-1. 风险函数(risk function)或期望损失(expected loss)
+2. 风险函数(risk function)或期望损失(expected loss)
    这个和模型的泛化误差的形式是一样的
    $R_{exp}(f)=E_p[L(Y, f(X))]=\int_{\mathcal X\times\mathcal Y}L(y,f(x))P(x,y)\, {\rm d}x{\rm d}y$
    模型$f(X)$关于联合分布$P(X,Y)$的**平均意义下的**损失(**期望**损失)，但是因为$P(X,Y)$是未知的，所以前面的用词是**期望**，以及**平均意义下的**。
 
    这个表示其实就是损失的均值，反映了对整个数据的预测效果的好坏，P(x,y)$转换成$\frac {\nu(X=x, Y=y)}{N}$更容易直观理解, 可以参考[CH09](../CH09/README.md)，6.2.2节的部分描述来理解，但是真实的数据N是无穷的。
 
-1. **经验风险**(empirical risk)或**经验损失**(empirical loss)
+3. **经验风险**(empirical risk)或**经验损失**(empirical loss)
    $R_{emp}(f)=\frac{1}{N}\sum^{N}_{i=1}L(y_i,f(x_i))$
    模型$f$关于**训练样本集**的平均损失
    根据大数定律，当样本容量N趋于无穷大时，经验风险趋于期望风险
 
-1. **结构风险**(structural risk)
+4. **结构风险**(structural risk)
    $R_{srm}(f)=\frac{1}{N}\sum_{i=1}^{N}L(y_i,f(x_i))+\lambda J(f)$
    $J(f)$为模型复杂度, $\lambda \geqslant 0$是系数，用以权衡经验风险和模型复杂度。
 
